@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AppOlx</string>
+    <string name="favoritar">Favoritar</string>
+    <string name="pesquisar">Pesquisar</string>
+    <string name="descri_o">Descrição</string>
+    <string name="valor">Valor</string>
+    <string name="local">Local</string>
+    <string name="salvar">Salvar</string>
+</resources>
