@@ -15,18 +15,20 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="130dp"
+        android:padding="5dp">
 
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="70dp"
+            android:layout_height="130dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_logo"/>
-
+            android:src="@drawable/ic_anuncio"
+            android:contentDescription="@string/anuncio" />
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="70dp"
+            android:layout_height="130dp"
+            android:paddingTop="10dp"
             android:orientation="vertical"
             android:layout_weight="2">
             <TextView
@@ -38,6 +40,11 @@
 
             <TextView
                 android:id="@+id/txt_anuncio_valor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txt_anuncio_local"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

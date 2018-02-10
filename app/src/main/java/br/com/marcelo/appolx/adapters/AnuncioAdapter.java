@@ -1,5 +1,6 @@
 package br.com.marcelo.appolx.adapters;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import br.com.marcelo.appolx.Anuncio;
+import br.com.marcelo.appolx.AnuncioFormActivity;
 import br.com.marcelo.appolx.R;
 import io.objectbox.Box;
 
@@ -37,7 +39,6 @@ public class AnuncioAdapter extends RecyclerView.Adapter<AnuncioAdapter.ViewHold
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.view_holder, parent, false);
 
-
         ViewHolder  viewHolder = new ViewHolder(view);
 
         return viewHolder;
@@ -49,6 +50,7 @@ public class AnuncioAdapter extends RecyclerView.Adapter<AnuncioAdapter.ViewHold
 
         holder.txtTitulo.setText(anuncio.getTitulo());
         holder.txtValor.setText(String.valueOf(anuncio.getValor()));
+        holder.txtLocal.setText(anuncio.getLocal());
         holder.txtData.setText(anuncio.getData());
 
         setupLongClick(holder,anuncio,position);
@@ -77,7 +79,9 @@ public class AnuncioAdapter extends RecyclerView.Adapter<AnuncioAdapter.ViewHold
                         builder.create().show();
                         break;
                     case R.id.item_menu_editar:
-                        
+                        Intent intent = new Intent(context, AnuncioFormActivity.class);
+                        intent.putExtra("anuncio",anuncio.getId());
+                        context.startActivity(intent);
                         break;
                 }
                 return true;
@@ -96,6 +100,7 @@ public class AnuncioAdapter extends RecyclerView.Adapter<AnuncioAdapter.ViewHold
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView txtTitulo;
         public TextView txtValor;
+        public TextView txtLocal;
         public TextView txtData;
 
         public TextView tvAlunoEmail;
@@ -105,6 +110,7 @@ public class AnuncioAdapter extends RecyclerView.Adapter<AnuncioAdapter.ViewHold
 
             txtTitulo = (TextView)itemView.findViewById(R.id.txt_anuncio_titulo);
             txtValor = (TextView)itemView.findViewById(R.id.txt_anuncio_valor);
+            txtLocal = (TextView)itemView.findViewById(R.id.txt_anuncio_local);
             txtData = (TextView)itemView.findViewById(R.id.txt_anuncio_data);
 
         }

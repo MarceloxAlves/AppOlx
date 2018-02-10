@@ -10,22 +10,25 @@
     <EditText
         android:id="@+id/txt_anuncio_descricao"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
+        android:layout_height="70dp"
+        android:maxLength="50"
+        android:paddingLeft="10dp"
         android:hint="@string/descri_o"/>
 
     <EditText
         android:id="@+id/txt_anuncio_valor"
         android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:inputType="numberDecimal"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
+        android:maxLength="6"
+        android:paddingLeft="10dp"
         android:hint="@string/valor"/>
     <EditText
         android:id="@+id/txt_anuncio_local"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
+        android:layout_height="70dp"
+        android:maxLength="50"
+        android:paddingLeft="10dp"
         android:hint="@string/local"/>
 
 </LinearLayout>
